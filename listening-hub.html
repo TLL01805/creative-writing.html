@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening & Vocabulary Hub | The Learner's Ladder</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f0f3f4; color: #2c3e50; }
+        header { text-align: center; padding: 30px 0; background: #34495e; color: #fff; border-radius: 8px; margin-bottom: 30px; }
+        header h1 { margin: 0; font-size: 2.2em; }
+        .section-card { background: #fff; padding: 25px; margin-bottom: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.8em; color: white; margin-bottom: 10px; }
+        .b-beg { background-color: #2ecc71; }
+        .b-int { background-color: #f1c40f; color: #333; }
+        .b-adv { background-color: #e74c3c; }
+        .audio-box { background: #ecf0f1; border-left: 4px solid #34495e; padding: 15px; margin: 15px 0; border-radius: 4px; font-style: italic; }
+        .quiz-box { margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee; }
+        button { background: #3498db; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #2980b9; }
+        .feedback { margin-top: 10px; font-weight: bold; color: #27ae60; display: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🎧 Listening & Vocabulary Hub</h1>
+    <p>Practice your English listening comprehension skills across all levels!</p>
+</header>
+
+<!-- BEGINNER -->
+<div class="section-card">
+    <span class="badge b-beg">Beginner</span>
+    <h2>Topic: Ordering Food at a Cafe</h2>
+    <p><strong>Listening Script:</strong> Read aloud or have a partner read this conversation to you:</p>
+    <div class="audio-box">
+        "Hello! Welcome to Sunshine Cafe. What can I get for you today?"<br>
+        "Hi! I would like a hot cup of coffee and a chocolate muffin, please."<br>
+        "Sure thing! Will that be all for you?"<br>
+        "Yes, thank you. How much is it?"<br>
+        "That will be five dollars, please."
+    </div>
+    <div class="quiz-box">
+        <p><strong>Quick Question:</strong> What pastry did the customer order?</p>
+        <button onclick="showBeg()">Check Answer</button>
+        <div id="beg-feed" class="feedback">Answer: A chocolate muffin! 🧁</div>
+    </div>
+</div>
+
+<!-- INTERMEDIATE -->
+<div class="section-card">
+    <span class="badge b-int">Intermediate</span>
+    <h2>Topic: Changing Weather Patterns</h2>
+    <p><strong>Listening Script:</strong> Listen to the news report script below:</p>
+    <div class="audio-box">
+        "Good morning listeners. Meteorologists are reporting an unexpected shift in local weather systems this week. Unseasonably high temperatures are causing regional reservoirs to drop faster than projected. Citizens are urged to conserve water resources until heavy precipitation arrives next Tuesday."
+    </div>
+    <div class="quiz-box">
+        <p><strong>Vocabulary Check:</strong> What does the word <strong>"precipitation"</strong> mean in this report?</p>
+        <button onclick="showInt()">Check Meaning</button>
+        <div id="int-feed" class="feedback">Meaning: Rain or snow falling to the ground! 🌧️</div>
+    </div>
+</div>
+
+<!-- ADVANCED -->
+<div class="section-card">
+    <span class="badge b-adv">Advanced</span>
+    <h2>Topic: The Economics of Renewable Energy</h2>
+    <p><strong>Listening Script:</strong> Analyze the academic audio transcript extract:</p>
+    <div class="audio-box">
+        "The transitional paradigm toward sustainable infrastructure is fundamentally tethered to market viability. While initial capital expenditure for clean energy matrices remains substantially prohibitive for developing economies, long-term operational yields demonstrate clear systemic superiority over traditional fossil fuels."
+    </div>
+    <div class="quiz-box">
+        <p><strong>Vocabulary Check:</strong> What does the word <strong>"prohibitive"</strong> imply here?</p>
+        <button onclick="showAdv()">Check Meaning</button>
+        <div id="adv-feed" class="feedback">Meaning: The cost is too high, making it difficult or impossible to buy! 💰</div>
+    </div>
+</div>
+
+<script>
+    function showBeg() { document.getElementById('beg-feed').style.display = 'block'; }
+    function showInt() { document.getElementById('int-feed').style.display = 'block'; }
+    function showAdv() { document.getElementById('adv-feed').style.display = 'block'; }
+</script>
+
+</body>
+</html>
