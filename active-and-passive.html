@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active vs. Passive Voice Quiz | The Learner's Ladder</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; max-width: 650px; margin: 40px auto; padding: 20px; color: #2c3e50; background-color: #f8fafc; }
+        header { text-align: center; margin-bottom: 30px; }
+        h1 { color: #1e293b; margin-bottom: 5px; }
+        .quiz-container { background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .level-section { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px dashed #e2e8f0; }
+        .level-title { font-size: 1.1em; font-weight: bold; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 15px; text-transform: uppercase; color: #fff; }
+        .beginner { background-color: #2ecc71; }
+        .intermediate { background-color: #3498db; }
+        .advanced { background-color: #9b59b6; }
+        .question { font-weight: 600; margin: 15px 0 10px 0; color: #334155; }
+        label { display: block; margin: 8px 0; padding: 12px; background: #f1f5f9; border-radius: 6px; cursor: pointer; transition: 0.2s ease; }
+        label:hover { background: #e2e8f0; }
+        input[type="radio"] { margin-right: 12px; transform: scale(1.1); }
+        button { display: block; width: 100%; padding: 14px; background: #10b981; color: white; border: none; border-radius: 6px; font-size: 1.1em; cursor: pointer; margin-top: 25px; font-weight: bold; transition: background 0.2s; }
+        button:hover { background: #059669; }
+        #result { margin-top: 25px; font-size: 1.3em; font-weight: bold; text-align: center; color: #1e3a8a; display: none; background: #dbeafe; padding: 15px; border-radius: 6px; }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <header>
+        <h1>📝 Active vs. Passive Voice Challenge</h1>
+        <p style="color: #64748b;">Master your sentence structures across all levels!</p>
+    </header>
+    
+    <form id="voiceQuiz">
+        <!-- BEGINNER LEVEL -->
+        <div class="level-section">
+            <span class="level-title beginner">Level 1: Beginner</span>
+            
+            <div class="question">1. Identify the voice: "The little boy kicked the soccer ball."</div>
+            <label><input type="radio" name="q1" value="correct"> Active Voice (Subject does the action)</label>
+            <label><input type="radio" name="q1" value="wrong"> Passive Voice (Action happens to the subject)</label>
+
+            <div class="question">2. Identify the voice: "The milk was spilled by the cat."</div>
+            <label><input type="radio" name="q2" value="wrong"> Active Voice</label>
+            <label><input type="radio" name="q2" value="correct"> Passive Voice</label>
+        </div>
+
+        <!-- INTERMEDIATE LEVEL -->
+        <div class="level-section">
+            <span class="level-title intermediate">Level 2: Intermediate</span>
+            
+            <div class="question">3. Change this to Active Voice: "The historical museum is visited by thousands of tourists every summer."</div>
+            <label><input type="radio" name="q3" value="wrong"> Every summer, thousands of tourists are visiting the historical museum.</label>
+            <label><input type="radio" name="q3" value="correct"> Thousands of tourists visit the historical museum every summer.</label>
+
+            <div class="question">4. Which sentence is written in the Passive Voice?</div>
+            <label><input type="radio" name="q4" value="correct"> A massive global network has been constructed over decades.</label>
+            <label><input type="radio" name="q4" value="wrong"> Engineers constructed a massive global network over decades.</label>
+        </div>
+
+        <!-- ADVANCED LEVEL -->
+        <div class="level-section" style="border-bottom: none;">
+            <span class="level-title advanced">Level 3: Advanced</span>
+            
+            <div class="question">5. Why would a writer purposefully choose the passive voice in an academic statement like: "The laboratory parameters were strictly maintained throughout the execution phase"?</div>
+            <label><input type="radio" name="q5" value="correct"> To emphasize the objective process rather than the person performing it.</label>
+            <label><input type="radio" name="q5" value="wrong"> Because the active voice alternative is grammatically incorrect in modern English.</label>
+        </div>
+
+        <button type="button" onclick="calculateScore()">Submit My Answers</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function calculateScore() {
+        let score = 0;
+        const totalQuestions = 5;
+        const form = document.getElementById('voiceQuiz');
+        
+        if(form.q1.value === 'correct') score++;
+        if(form.q2.value === 'correct') score++;
+        if(form.q3.value === 'correct') score++;
+        if(form.q4.value === 'correct') score++;
+        if(form.q5.value === 'correct') score++;
+        
+        const resultDiv = document.getElementById('result');
+        resultDiv.style.display = 'block';
+        
+        let message = "";
+        if (score === totalQuestions) {
+            message = "Perfect Score! 5/5 🎉 Outstanding mastery of English grammar!";
+        } else if (score >= 3) {
+            message = "Good Job! " + score + "/" + totalQuestions + " 👍 You have a strong foundation.";
+        } else {
+            message = "Keep Practicing! " + score + "/" + totalQuestions + " 📚 Review the rules and try again!";
+        }
+        
+        resultDiv.innerHTML = message;
+    }
+</script>
+
+</body>
+</html>
